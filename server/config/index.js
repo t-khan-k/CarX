@@ -9,7 +9,7 @@ var envs = {
         db: 'carx_db',
         hostname: 'localhost',
         cloudinary: {
-            cloudName: 'carx',
+            cloudName: 'feed',
             apiKey: '395845624313527',
             apiSecret: 'rP5FRFCwOiSgEherG_JmsTjuNDw'
         },

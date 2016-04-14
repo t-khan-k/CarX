@@ -8,7 +8,7 @@ function init(app){
     app.get('/', welcome.all);
 
     // Image upload
-    // app.post('/path', auth.authenticate, upload.single('image'), welcome.create);
+    app.post('/user', upload.single('image'), welcome.create);
     console.log("Routes initiated");
 }
 

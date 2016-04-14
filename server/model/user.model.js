@@ -9,6 +9,8 @@ var Schema = mongoose.Schema,
 var UserSchema = new Schema({
     fullName: {type: String, required: true},
     email: {type: String, required: true},
+    password: {type: String, required: true},
+    token: {type: String},
     number: {type: String, required: true},
     age: {type: Number},
     gender: {type: String, enum: ['m', 'f', 'x'], required: true},      // separated out in constants file
