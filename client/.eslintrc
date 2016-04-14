@@ -324,7 +324,6 @@
     "angular/window-service": 2
   },
   "extends": [
-    "angular",
-    "babel"
+    "angular"
   ]
 }
