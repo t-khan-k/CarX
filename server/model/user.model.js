@@ -1,26 +1,32 @@
 'use strict';
 
-
 var mongoose = require('mongoose');
 var epoch = require('../helper/epoch');
 
 var Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
-var WelcomeSchema = new Schema({
-    user: {type: ObjectId, ref: 'User'},
-    image: String,
-    epoch: { type: Number, default: epoch.ms() }
+var UserSchema = new Schema({
+    fullName: {type: String, required: true},
+    email: {type: String, required: true},
+    number: {type: String, required: true},
+    age: {type: Number},
+    gender: {type: String, enum: ['m', 'f', 'x'], required: true},      // separated out in constants file
+    image: {type: String},
+    routes: [{type: ObjectId, ref: 'route'}],
+    organization: {type: ObjectId, ref: 'organization'},
+    deleted: {type: Boolean},
+    created: {type: Number, default: epoch.ms()}
 });
 
 // Pre-save hook
-WelcomeSchema.pre('save', (next)=>{
+UserSchema.pre('save', (next)=>{
     next();
 });
 
-WelcomeSchema.methods.say = function() {
+UserSchema.methods.say = function() {
     console.log("bla");
 };
 
-var Welcome = mongoose.model('welcome',WelcomeSchema);
-module.exports = Welcome;
+var User = mongoose.model('welcome',UserSchema);
+module.exports = User;
