@@ -9,6 +9,7 @@
     "window": false,
     "angular": true
   },
+  "parser": "babel-eslint",
   "rules": {
     "accessor-pairs": 2,
     "arrow-spacing": [
@@ -323,6 +324,7 @@
     "angular/window-service": 2
   },
   "extends": [
-    "angular"
+    "angular",
+    "babel"
   ]
 }

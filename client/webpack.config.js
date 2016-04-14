@@ -26,8 +26,9 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'ng-annotate',
-        exclude: /node_modules/
+        loader: 'ng-annotate!babel',
+        exclude: /node_modules/,
+        include: path.join(__dirname, 'app/src')
       },
       {
         test: /\.html$/,
