@@ -4,16 +4,10 @@ require('./core.scss');
 
 var name = module.exports = 'car-x.core';
 
-// Fix to make restangular work with webpack since it doesn't support common js.
-// For more info: https://github.com/mgonto/restangular/issues/749
-require('restangular');
-
 angular
   .module(name, [
-    require('angular-ui-router'),
-    'restangular'
+    require('angular-ui-router')
   ])
-  .config(require('./restangular.config.js'))
   .config(require('./router.config.js'))
   .run(require('./router.run.js'))
 ;
